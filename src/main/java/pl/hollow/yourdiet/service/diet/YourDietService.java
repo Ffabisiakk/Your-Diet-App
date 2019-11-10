@@ -1,5 +1,7 @@
 package pl.hollow.yourdiet.service.diet;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.hollow.yourdiet.client.SpoonacularClient;
@@ -13,13 +15,17 @@ import pl.hollow.yourdiet.service.diet.generators.ThreeMealsGenerator;
 @Service
 public class YourDietService {
 
+    public static final Logger LOGGER = LoggerFactory.getLogger(YourDietService.class);
+
     @Autowired
     private SpoonacularClient spoonacularClient;
 
     @Autowired
     private DbService dbService;
 
+
     public Diet generateDiet(User user) {
+        LOGGER.info("YourDietDervice: start generateDiet");
         Setting setting = dbService.getSetting(user.getId()).get();
         DietGenerator dietGenerator;
         switch (setting.getNumberOfMeals()) {
@@ -40,6 +46,8 @@ public class YourDietService {
         diet.setMeals(dietGenerator.generateDiet(macros, setting));
 
         setSummarizedMacros(diet);
+
+        LOGGER.info("Generated diet:\n" + diet);
 
         return diet;
     }

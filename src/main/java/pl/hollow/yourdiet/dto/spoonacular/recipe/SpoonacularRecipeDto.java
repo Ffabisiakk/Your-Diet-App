@@ -10,10 +10,10 @@ import lombok.Setter;
 public class SpoonacularRecipeDto {
 
     private long id;
+    private String title;
     private String calories;
     private String carbs;
     private String fat;
     private String protein;
-    private String title;
 
 }

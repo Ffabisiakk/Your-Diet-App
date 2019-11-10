@@ -46,7 +46,7 @@ public class SpoonacularService {
 
     public List<Ingredient> getIngredientsByDietId(Long dietId) {
         RecipeIngredientsDto recipeIngredientsDto = spoonacularClient.getRecipeIngredients(dietId);
-        List<Ingredient> ingredients = ingredientMapper.mapToIngredientList(recipeIngredientsDto.getIngredients());
+        List<Ingredient> ingredients = ingredientMapper.mapToIngredientListSpoon(recipeIngredientsDto.getIngredients());
         Recipe recipe = dbService.getRecipe(dietId).get();
         ingredients.forEach(i -> i.setRecipe(recipe));
         return ingredients;

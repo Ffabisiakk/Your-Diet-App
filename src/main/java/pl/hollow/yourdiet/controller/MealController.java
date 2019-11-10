@@ -20,7 +20,7 @@ public class MealController {
 
     @GetMapping()
     public List<MealDto> getRecipes() {
-        return mealMapper.mapToRecipeDtoList(dbService.getMeals());
+        return mealMapper.mapToMealDtoList(dbService.getMeals());
     }
 
     @GetMapping("{id}")

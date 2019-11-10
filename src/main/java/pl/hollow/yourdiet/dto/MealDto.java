@@ -11,10 +11,10 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @Getter
 public class MealDto {
+
     private long id;
-    private String title;
-    private String description;
+    private RecipeDto recipe;
+    private DietDto dietDto;
     private DayOfWeek dayOfWeek;
     private LocalTime time;
-    private DietDto dietDto;
 }

@@ -10,11 +10,12 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 public class DietDto {
+
     private long id;
+    private UserDto user;
+    private List<MealDto> meals;
     private int kcal;
     private int whey;
     private int carbs;
     private int fat;
-    private UserDto user;
-    private List<MealDto> meals;
 }

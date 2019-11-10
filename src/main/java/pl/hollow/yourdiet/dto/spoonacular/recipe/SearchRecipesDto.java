@@ -13,6 +13,7 @@ import java.util.List;
 @Getter
 @JsonIgnoreProperties(value = "true")
 public class SearchRecipesDto {
+
     private int offset;
     private int number;
     @JsonProperty("results")
