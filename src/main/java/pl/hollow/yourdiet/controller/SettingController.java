@@ -25,7 +25,7 @@ public class SettingController {
 
     @GetMapping("{id}")
     public SettingDto getSetting(@PathVariable Long id) {
-        return settingMapper.mapToSettingDto(dbService.getSetting(id).orElse(null));
+        return settingMapper.mapToSettingDto(dbService.getSetting(id).orElseThrow());
     }
 
     @PostMapping()

@@ -31,13 +31,13 @@ public class FourMealsGenerator extends CommonDietGenerator implements DietGener
 
         Meal lunch = new Meal();
         lunch.setDayOfWeek(DayOfWeek.of(day));
-        lunch.setTime(firstMealTime.plusHours(6));
+        lunch.setTime(firstMealTime.plusHours(4));
         setRecipe(macros, dietType, excludedIngredients, recipePool, lunch, 0.35);
         diet.add(lunch);
 
         Meal lunch2 = new Meal();
         lunch2.setDayOfWeek(DayOfWeek.of(day));
-        lunch2.setTime(firstMealTime.plusHours(9));
+        lunch2.setTime(firstMealTime.plusHours(8));
         setRecipe(macros, dietType, excludedIngredients, recipePool, lunch2, 0.35);
         diet.add(lunch2);
 
