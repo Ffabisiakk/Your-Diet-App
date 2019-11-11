@@ -22,7 +22,7 @@ import java.util.Optional;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("spoonacular")
+@RequestMapping("yourdiet")
 public class YourDietController {
 
     @Autowired
